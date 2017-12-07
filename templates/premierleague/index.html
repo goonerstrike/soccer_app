@@ -1,5 +1,7 @@
 <html> 
 {% block body %} 
-{{ names }}
+{% for item in names %}
+	{{ item }}<br>
+{% endfor %}
 {% endblock %}
 </html>

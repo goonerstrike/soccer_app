@@ -4,22 +4,9 @@
 <div class="block1">
 <h1>Choose a League!</h1>
   <p>
-	<a href="templates/brazil/brazil.html">{{leagues[0]}}</a><br>
-	<a href="/premierleague/">{{leagues[1]}}</a><br>
-	<a href="templates/championship/championship.html">{{leagues[2]}}<br>
-	<a href="templates/leagueone/leagueone.html">{{leagues[3]}}<br>
-	<a href="templates/leaguetwo/leaguetwo.html">{{leagues[4]}}<br>
-	<a href="templates/eredivisie.html">{{leagues[5]}}<br>
-	<a href="templates/ligue1.html">{{leagues[6]}}<br>
-	<a href="templates/ligue2.html">{{leagues[7]}}<br>
-	<a href="templates/bundesliga1.html">{{leagues[8]}}<br>
-	<a href="templates/bundesliga2.html">{{leagues[9]}}<br>
-	<a href="templates/primeradivision.html">{{leagues[10]}}<br>
-	<a href="templates/seriea.html">{{leagues[11]}}<br>
-	<a href="templates/primeiraliga.html">{{leagues[12]}}<br>
-	<a href="templates/dfbpokal.html">{{leagues[13]}}<br>
-	<a href="templates/serieb.html">{{leagues[14]}}<br>
-	<a href="templates/championsleague.html">{{leagues[15]}}<br>
+	{% for item in leagues %}
+		<a href="/{{ item.0 }}/">{{ item.1 }}</a><br>
+	{% endfor %}
   </p>
 <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/23344-200.png">
 </div>
