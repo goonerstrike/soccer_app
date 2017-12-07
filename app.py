@@ -4,17 +4,28 @@ import requests
 import json
  
 app = Flask(__name__)
+
+comp_url = 'https://api.football-data.org/v1/competitions'
+headers = {'Authorization': 'Bearer 1310374de6494d8dbe31e7f84aa85f23'}
  
 @app.route("/")
 def index():
-	url = 'https://api.football-data.org/v1/competitions'
-	headers = {'Authorization': 'Bearer 1310374de6494d8dbe31e7f84aa85f23'}
-	r = requests.get(url, headers=headers, verify=False)
+	r = requests.get(comp_url, headers=headers, verify=False)
 	competitions = r.json()
 	leagues = []
 	for i in competitions:
 		leagues.append(i["caption"])
-	return render_template('index.html', leagues=leagues)
+	return render_template('index.html', **locals())
  
+@app.route("/premierleague/")
+def epl():
+	url = 'https://api.football-data.org/v1/competitions/445/teams'
+	r = requests.get(url, headers=headers, verify=False)
+	teams = r.json() 
+	names = []
+	for i in teams["teams"]:
+		names.append(i["name"])
+	return render_template('/premierleague/index.html', names=names)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
