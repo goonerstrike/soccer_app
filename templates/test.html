@@ -1,24 +1,30 @@
-<html>
-<head>
-    <title>Website</title>
-<style>
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+{% extends "layout.html" %}
+{% block body %}
  
-body{
-    text-align: center;    
-}
-h1{
-    font-family: 'Amatic SC', cursive;
-    font-weight: normal;
-    color: #8ac640;
-    font-size: 2.5em;
-}
- 
-</style>
- 
-</head>
-<body>
- {% block body %}{% endblock %}
- 
-</body>
-</html>
+<div class="block1">
+<h1>Hello {{name}}!</h1>
+  <h2> Please Choose a League </h2>
+  <p>
+	{{leagues[0]}}<br>
+	{{leagues[1]}}<br>
+	{{leagues[2]}}<br>
+	{{leagues[3]}}<br>
+	{{leagues[4]}}<br>
+	{{leagues[5]}}<br>
+	{{leagues[6]}}<br>
+	{{leagues[7]}}<br>
+	{{leagues[8]}}<br>
+	{{leagues[9]}}<br>
+	{{leagues[10]}}<br>
+	{{leagues[11]}}<br>
+	{{leagues[12]}}<br>
+	{{leagues[13]}}<br>
+	{{leagues[14]}}<br>
+	{{leagues[15]}}<br>
+	{{leagues[16]}}<br>
+	{{leagues[17]}}<br>
+
+  </p>
+<img src="http://www.naturalprogramming.com/images/smilingpython.gif">
+</div>
+{% endblock %}
