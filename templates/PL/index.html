@@ -1,7 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
 <html> 
-{% block body %} 
-{% for item in names %}
-	{{ item }}<br>
-{% endfor %}
-{% endblock %}
+<h1>
+</h1>
+<table>
+  <tr>
+  {% for item in teams %}
+        <th>
+          <img class="crest" src="{{ item.1 }}"><br>
+          {{ item.0 }}
+        </th>
+  {% endfor %}
+  </tr>
 </html>
+
+{% endblock %}

@@ -2,12 +2,13 @@
 {% block body %}
  
 <div class="block1">
-<h1>Choose a League!</h1>
+<h1>Choose a League!
+</h1>
   <p>
 	{% for item in leagues %}
 		<a href="/{{ item.0 }}/">{{ item.1 }}</a><br>
 	{% endfor %}
   </p>
-<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/23344-200.png">
+<img class="crest" src="https://d30y9cdsu7xlg0.cloudfront.net/png/23344-200.png">
 </div>
 {% endblock %}
