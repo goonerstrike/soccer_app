@@ -31,7 +31,7 @@ def epl():
 	names = []
 	for i in teams["teams"]:
 		names.append(i["name"])
-	return render_template('/PL/index.html', names=names)
+	return render_template('/PL/index.html', )
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
