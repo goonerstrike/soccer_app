@@ -5,12 +5,13 @@ import json
  
 app = Flask(__name__)
 
-comp_url = 'https://api.football-data.org/v1/competitions'
+url = 'https://api.football-data.org/v1/competitions'
 headers = {'Authorization': 'Bearer 1310374de6494d8dbe31e7f84aa85f23'}
  
 @app.route("/")
 def index():
-	r = requests.get(comp_url, headers=headers, verify=False)
+	url = 'https://api.football-data.org/v1/competitions'
+	r = requests.get(url, headers=headers, verify=False)
 	competitions = r.json()
 	league_name = []
 	league_acronym = []
