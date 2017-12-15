@@ -4,12 +4,12 @@
 <html> 
 <h1>
 </h1>
-<table align="center" width="500px">
+<table align="center" cellpadding="10" >
   <tr>
   {% for item in teams %}
         <th>
           <img class="crest" src="{{ item.1 }}"><br>
-            {{ item.0 }}
+            {{ item.0 }}<br>
     {% if loop.index is divisibleby 4 %}
       </tr>
       <tr>
